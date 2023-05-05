@@ -12,8 +12,9 @@ Deck.belongsTo(User)
 Deck.hasMany(Card)
 Card.belongsTo(Deck)
 
-Deck.belongsToMany(Card, {through: "post-tag"});
-Card.belongsToMany(Deck, {through: "post-tag"});
+Card.belongsToMany(Attack, {through: "post-tags"});
+Attack.belongsToMany(Card, {through: "post-tags"});
+ 
 
 // and then export them all below
 module.exports = { 
